@@ -2,6 +2,10 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <string.h>
+/*
+0        1         2         3         4         5         6         7         8
+12345678901234567890123456789012345678901234567890123456789012345678901234567890
+*/
 
 int CHAR_COUNT(char filename[])
 {
@@ -18,7 +22,6 @@ int CHAR_COUNT(char filename[])
         printf("%s Open success\n\n", filename);
     }
     int characters = 0, uppercase = 0, words = 0, lines = 0, inword = 0;
-    char buf[1024];
     while (fgets(buffer, sizeof(buffer), fp) != NULL)
     {
         for (int i = 0; i < strlen(buffer); i++)
@@ -31,7 +34,7 @@ int CHAR_COUNT(char filename[])
             {
                 uppercase++;
             }
-            if (buffer[i] == '\n')
+            if (buffer[i] == '\n' || buffer[i] == EOF)
             {
                 lines++;
             }
@@ -46,7 +49,8 @@ int CHAR_COUNT(char filename[])
             }
         }
     }
-    printf("There are :\nLines     :%-4d\n", lines);
+    lines++;
+    printf("There are\nLines     :%-4d\n", lines);
     printf("Characters:%-4d\n", characters);
     printf("Uppercases:%-4d\n", uppercase);
     printf("Words     :%-4d\n", words);

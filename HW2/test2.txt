@@ -1,0 +1,11 @@
+some special case:
+1. too many space: Hello        World
+there are only 6 words in 1.
+2. many lines:
+
+
+
+
+there are 6 lines in 2.
+3. alphanumeric characters test: 1s6fbCSAv1@@##s38.436z.XSWA.'hs||\\ze1hr6
+4. uppercase letters test: AsgsBgIgrVhjdBjIyjNyjyGjVPOkSrdDykVrsKGFjyjyjEGJ

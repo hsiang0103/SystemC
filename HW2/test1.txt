@@ -1,0 +1,13 @@
+I. Text Processing
+Description
+1. Open any file (the text file) by command input, e.g. run TheTextFile.
+2. Implement a function to count in the file
+How many lines (how many '\n' in the file and also the EOF)
+How many characters (alphanumeric characters only, i.e. 'A'~'Z', 
+'a'~'z', and '0'~'9')
+How many uppercase letters ('A'~'Z')
+How many words (separated by spaces (' ') and '\n')
+3. Then, implement another function that converts all the text into 
+uppercase and writes to a file named "UPPER." For example, given an 
+original text as "The fox in the fog –%&9 catch me if you can." and 
+convert it into "THE FOX IN THE FOG –%&9 CATCH ME IF YOU CAN."
