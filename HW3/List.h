@@ -1,4 +1,6 @@
+#include <iostream>
 #include "Node.h"
+using namespace std;
 
 class List : public Node
 {
@@ -7,12 +9,14 @@ protected:
 
 public:
     List();
-    List(unsigned int _length);
-    List(const List &other);
+    List(unsigned int);
+    List(const List &);
     ~List();
-    List &operator=(const List &other);
+    List &operator=(const List &);
+    List operator+(const List &);
     int setLength(unsigned int);
     unsigned int getLength();
-    int setElement(unsigned int pos, long val);
-    long getElement(unsigned int pos);
+    int setElement(unsigned int , long );
+    long getElement(unsigned int );
+    friend ostream& operator<<(ostream &, List);
 };
