@@ -18,6 +18,6 @@ int main()
     cout << "+ test" << endl;
     List result = *c + *a;
     cout << result << endl;
-
+    cout << result << endl;
     return 0;
 }
