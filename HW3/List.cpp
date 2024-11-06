@@ -1,20 +1,21 @@
 #include <iostream>
-#include <List.h>
+#include "List.h"
 using namespace std;
 
 List::List() : Node(), length(0) {}
 
 List::List(unsigned int _length) : Node(_length), length(_length) {}
 
-List::List(const List &other) : Node(), length(other.length)
+List::List(const List &other) : Node()
 {
-    if (other._Node)
+    length = other.length;
+    if(length > 0)
     {
-        _Node = new long[length];
-        for (int i = 0; i < length; i++)
+       _Node = new long[length];
+        for (unsigned int i = 0; i < length; i++)
         {
             _Node[i] = other._Node[i];
-        }
+        } 
     }
     else
     {
@@ -24,7 +25,12 @@ List::List(const List &other) : Node(), length(other.length)
 
 List::~List()
 {
-    length = 0;
+    if(length != 0)
+    {
+        delete[] _Node;
+        _Node = nullptr;
+        length = 0;
+    }
 }
 
 List &List::operator=(const List &other)
@@ -34,7 +40,7 @@ List &List::operator=(const List &other)
     if (other._Node)
     {
         _Node = new long[length];
-        for (int i = 0; i < length; i++)
+        for (unsigned int i = 0; i < length; i++)
         {
             _Node[i] = other._Node[i];
         }
@@ -76,6 +82,7 @@ int List::setElement(unsigned int pos, long val)
     else
     {
         cout << "error message" << endl;
+        return 0;
     }
 }
 
