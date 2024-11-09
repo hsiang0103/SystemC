@@ -55,21 +55,76 @@ List &List::operator=(const List &other)
 
 List List::operator+(const List &other)
 {
-    unsigned int loop_length = (this->length < other.length) ? other.length : this->length;
+    unsigned int loop_length = (length < other.length) ? other.length : length;
     List temp(loop_length);
     for (unsigned int i = 0; i < loop_length; i++)
     {
-        if ((i >= this->length) && (i < loop_length))
+        if ((i >= length) && (i < loop_length))
         {
             temp._Node[i] = other._Node[i];
             continue;
         }
         if ((i >= other.length) && (i < loop_length))
         {
-            temp._Node[i] = this->_Node[i];
+            temp._Node[i] = _Node[i];
             continue;
         }
-        temp._Node[i] = this->_Node[i] + other._Node[i];
+        temp._Node[i] = _Node[i] + other._Node[i];
+    }
+    return temp;
+}
+
+List &List::operator+=(const List &other)
+{
+    unsigned int new_length = length + other.length;
+    List temp(new_length);
+    unsigned int i;
+    for (i = 0; i < length; i++)
+    {
+        temp._Node[i] = this->_Node[i];
+    }
+    for (; i < new_length; i++)
+    {
+        temp._Node[i] = other._Node[i - length];
+    }
+    *this = temp;
+    return *this;
+}
+
+List List::operator++()
+{
+    for (unsigned int i = 0; i < length; i++)
+    {
+        _Node[i]++;
+    }
+    return *this;
+}
+
+List List::operator++(int)
+{
+    List temp(*this);
+    for (unsigned int i = 0; i < length; i++)
+    {
+        _Node[i]++;
+    }
+    return temp;
+}
+
+List List::operator--()
+{
+    for (unsigned int i = 0; i < length; i++)
+    {
+        _Node[i]--;
+    }
+    return *this;
+}
+
+List List::operator--(int)
+{
+    List temp(*this);
+    for (unsigned int i = 0; i < length; i++)
+    {
+        _Node[i]--;
     }
     return temp;
 }
@@ -129,11 +184,27 @@ ostream &operator<<(ostream &out, List list)
     }
     else
     {
-        out << "List contents: ";
-        for (unsigned int i = 0; i < list.length; ++i)
+        for (unsigned int i = 0; i < list.length; i++)
         {
             out << list._Node[i] << " ";
         }
     }
     return out;
+}
+
+istream &operator>>(istream &in, List &list)
+{
+    unsigned int new_length;
+    in >> new_length;
+    if (list.length == 0)
+    {
+        list.setLength(new_length);
+    }
+    for (unsigned int i = 0; i < list.length; i++)
+    {
+        long value;
+        in >> value;
+        list.setElement(i, value);
+    }
+    return in;
 }

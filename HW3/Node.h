@@ -8,6 +8,8 @@ public:
     Node();
     Node(unsigned int);
     ~Node();
-    long *reCreate(unsigned int _length);
-    long *getNode();
+    long *reCreate(unsigned int);
+    long getNode(unsigned int i);
+    void setNode(unsigned int i, long value);
+    
 };

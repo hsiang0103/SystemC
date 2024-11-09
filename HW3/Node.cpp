@@ -24,7 +24,27 @@ long *Node::reCreate(unsigned int _length)
     return _Node;
 }
 
-long *Node::getNode()
+long Node::getNode(unsigned int i)
 {
-    return _Node;
+    if (_Node[i])
+    {
+        return _Node[i];
+    }
+    else
+    {
+        cout << "Node doesn't exist" << endl;
+        return 0;
+    }
+}
+
+void Node::setNode(unsigned int i, long value)
+{
+    if (_Node[i])
+    {
+        _Node[i] = value;
+    }
+    else
+    {
+        cout << "Node doesn't exist" << endl;
+    }
 }
