@@ -57,6 +57,7 @@ int main(int argc, char *argv[])
     out << "list_1   : " << *list_1 << "\n\n";
 
     out << "Use operator+= to add another List to a List" << endl;
+    out << "define += for concat two List" << endl;
     out << "list_1 += list_2 : " << (*list_1 += *list_2) << "\n\n";
 
     out << "Use operator-- to subtract 1 from all elements in a List" << endl;
