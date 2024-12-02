@@ -18,9 +18,4 @@ public:
     void setNode(unsigned int i, T value);
 };
 
-template class Node<int>;
-template class Node<double>;
-template class Node<char>;
-template class Node<string>;
-
 #endif

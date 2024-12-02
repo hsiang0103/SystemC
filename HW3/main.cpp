@@ -68,5 +68,34 @@ int main(int argc, char *argv[])
     out << "--list_1 : " << --(*list_1) << "\n";
     out << "list_1   : " << *list_1 << "\n\n";
 
+    List *list_5 = new List();
+    out << "Instantiate list_5" << endl;
+    out << "list_5 :" << *list_5 << "\n\n";
+
+    out << "set length test" << endl;
+    list_1->setLength(6);
+    list_5->setLength(6);
+    out << "get length test" << endl;
+    out << "list_5 length = " << list_5->getLength() << "\n\n";
+
+    out << "Set element test" << endl;
+    list_5->setElement(0, 100);
+    list_5->setElement(1, 0);
+    list_5->setElement(2, -100);
+    list_5->setElement(3, 10);
+    list_5->setElement(4, 22);
+    list_5->setElement(5, 69);
+    list_5->setElement(6, -123); // no change
+    out << "list_5   : " << *list_5 << "\n\n";
+
+    out << "get element test\n";
+    out << "list_5   : ";
+    for (unsigned int i = 0; i <= list_5->getLength(); i++)
+    {
+        out << list_5->getElement(i) << " ";
+    }
+    out << "\n-99999 represent position is over list length";
+
+    cout << "\nAll result has written in RESULT" << endl;
     return 0;
 }

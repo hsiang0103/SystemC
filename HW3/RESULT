@@ -1,0 +1,54 @@
+Instantiate list_1
+list_1 :List is empty.
+list_1 get the input file
+list_1 :1 2 3 4 5 
+
+Instantiate list_2 copied by copy constructor
+list_2 :1 2 3 4 5 
+
+Instantiate list_3
+list_3 :List is empty.
+list_3 copied by operator =
+list_3 :1 2 3 4 5 
+
+Instantiate list_4
+list_4 :List is empty.
+list_4 copied by operator +
+list_4 :1 2 3 4 5 
+
+Add two of the Lists using operator+ 
+list_1 + list_2 : 2 4 6 8 10 
+
+Use operator++ to add 1 to a List  
+list_1++ : 1 2 3 4 5 
+list_1   : 2 3 4 5 6 
+
+Use operator++(int) to add 1 to a List 
+++list_1 : 3 4 5 6 7 
+list_1   : 3 4 5 6 7 
+
+Use operator+= to add another List to a List
+define += for concat two List
+list_1 += list_2 : 3 4 5 6 7 1 2 3 4 5 
+
+Use operator-- to subtract 1 from all elements in a List
+list_1-- : 3 4 5 6 7 1 2 3 4 5 
+list_1   : 2 3 4 5 6 0 1 2 3 4 
+
+Use operator--(long) to subtract 1 from all elements in a List 
+--list_1 : 1 2 3 4 5 -1 0 1 2 3 
+list_1   : 1 2 3 4 5 -1 0 1 2 3 
+
+Instantiate list_5
+list_5 :List is empty.
+
+set length test
+get length test
+list_5 length = 6
+
+Set element test
+list_5   : 100 0 -100 10 22 69 
+
+get element test
+list_5   : 100 0 -100 10 22 69 -99999 
+-99999 represent position is over list length

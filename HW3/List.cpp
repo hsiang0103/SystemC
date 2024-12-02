@@ -158,7 +158,7 @@ int List::setElement(unsigned int pos, long val)
     }
     else
     {
-        cout << "Error!! Position larger than length" << endl;
+        cout << "Error!! Position " << pos << " exceed the list length "<< endl;
         return 0;
     }
 }
@@ -171,7 +171,7 @@ long List::getElement(unsigned int pos)
     }
     else
     {
-        cout << "Error!! Position larger than length" << endl;
+        cout << "Error!! Position " << pos << " exceed the list length "<< endl;
         return -99999;
     }
 }
